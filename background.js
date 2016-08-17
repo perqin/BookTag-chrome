@@ -96,3 +96,7 @@ function _OnInit() {
 }
 
 chrome.runtime.onInstalled.addListener(_OnInit);
+
+function isUrlBookmarked(url) {
+    // TODO
+}
