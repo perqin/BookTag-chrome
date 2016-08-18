@@ -1,12 +1,39 @@
 body {
+    min-width: 480px;
+    min-height: 360px;
     font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
     font-size: 100%;
 }
 
-#status {
-    /* avoid an excessively wide status text */
-    white-space: pre;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    max-width: 400px;
+.mdl-layout__header {
+    min-height: 0;
+}
+
+.hidden-header {
+    display: none;
+}
+
+.mdl-layout__tab .material-icons {
+    vertical-align: middle;
+}
+
+#bookmark-list-tab-content .mdl-textfield {
+    margin: 8px 0;
+}
+
+.mdl-layout__tab-panel {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.mdl-label-container {
+    margin: 8px 0;
+}
+
+.mdl-label-container .mdl-label {
+    font-size: 12px;
+}
+
+.mdl-chip:focus {
+    box-shadow: none;
 }

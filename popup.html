@@ -1,25 +1,77 @@
 <!doctype html>
-<!--
- This page is shown when the extension button is clicked, because the
- "browser_action" field in manifest.json contains the "default_popup" key with
- value "popup.html".
- -->
 <html>
     <head>
         <title>BookTag Popup</title>
-        <link rel="stylesheet" href="popup.css"/>
         <link rel="stylesheet" href="lib/mdl/material.min.css"/>
         <script src="lib/mdl/material.min.js"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
-        <!--
-          - JavaScript and HTML must be in separate files: see our Content Security
-          - Policy documentation[1] for details and explanation.
-          -
-          - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
-         -->
+        <link rel="stylesheet" href="popup.css"/>
         <!--<script src="popup.js"></script>-->
     </head>
     <body>
-        <h1>Hello BookTag</h1>
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
+            <header class="mdl-layout__header">
+                <div class="mdl-layout__header-row hidden-header">
+                    <span class="mdl-layout-title">Title</span>
+                </div>
+                <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+                    <a href="#current-page-tab-content" class="mdl-layout__tab is-active"><i class="material-icons">grade</i></a>
+                    <a href="#bookmark-list-tab-content" class="mdl-layout__tab"><i class="material-icons">list</i></a>
+                </div>
+            </header>
+            <main class="mdl-layout__content">
+                <section id="current-page-tab-content" class="mdl-layout__tab-panel is-active">
+                    <div class="page-content">Left</div>
+                </section>
+                <section id="bookmark-list-tab-content" class="mdl-layout__tab-panel">
+                    <div class="page-content">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
+                            <input id="search-bookmarks-input" class="mdl-textfield__input" type="text"/>
+                            <label class="mdl-textfield__label" for="search-bookmarks-input">Search bookmarks</label>
+                        </div>
+                        <div class="mdl-label-container"><span class="mdl-label mdl-color-text--accent">Tags</span></div>
+                        <div class="mdl-chips-container">
+                            <button class="mdl-chip"><span class="mdl-chip__text">Some tag</span></button>
+                            <button class="mdl-chip"><span class="mdl-chip__text">Some tag</span></button>
+                            <button class="mdl-chip"><span class="mdl-chip__text">Some tag</span></button>
+                            <button class="mdl-chip"><span class="mdl-chip__text">Some tag</span></button>
+                            <button class="mdl-chip"><span class="mdl-chip__text">Some tag</span></button>
+                            <button class="mdl-chip"><span class="mdl-chip__text">Some tag</span></button>
+                        </div>
+                        <div class="mdl-label-container"><span class="mdl-label mdl-color-text--accent">Bookmarks</span></div>
+                        <ul class="mdl-list">
+                            <li class="mdl-list__item"><span class="mdl-list__item-primary-content">Some bookmark title</span></li>
+                        </ul>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!--<div class="mdl-tabs mdl-js-tabs mdl-tabs__fixed-tabs mdl-js-ripple-effect">
+            <div class="mdl-tabs__tab-bar">
+                <a class="mdl-tabs__tab is-active" href="#current-page-tab-content">Currentdfdfdfdfdfdfdfdfdfdf</a>
+                <a class="mdl-tabs__tab" href="#bookmark-list-tab-content">List</a>
+            </div>
+
+            <div class="mdl-tabs__panel is-active" id="current-page-tab-content">
+                <ul>
+                    <li>Eddard</li>
+                    <li>Catelyn</li>
+                    <li>Robb</li>
+                    <li>Sansa</li>
+                    <li>Brandon</li>
+                    <li>Arya</li>
+                    <li>Rickon</li>
+                </ul>
+            </div>
+            <div class="mdl-tabs__panel" id="bookmark-list-tab-content">
+                <ul>
+                    <li>Tywin</li>
+                    <li>Cersei</li>
+                    <li>Jamie</li>
+                    <li>Tyrion</li>
+                </ul>
+            </div>
+        </div>-->
     </body>
 </html>
